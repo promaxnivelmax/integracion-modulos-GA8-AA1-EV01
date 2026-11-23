@@ -1,0 +1,29 @@
+/* Estilos de CV Builder: variables de marca, diseño adaptable a celular */
+:root{--azul:#14213D;--coral:#E63946;--arena:#F7F4EF;--verde:#2A9D8F;--texto:#3A4256;--borde:#dcd6cc}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--arena);color:var(--texto)}
+.barra{background:var(--azul);color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.marca{font-weight:800;font-size:20px;display:flex;align-items:center;gap:8px}
+.logo{background:var(--coral);border-radius:8px;padding:2px 8px}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav button{background:transparent;color:#fff;border:1px solid #ffffff55;border-radius:20px;padding:6px 12px;cursor:pointer}
+nav button.activo{background:#fff;color:var(--azul)}
+main{max-width:860px;margin:24px auto;padding:0 16px}
+.tarjeta{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:22px;margin-bottom:16px}
+h1,h2{color:var(--azul);margin-top:0}
+label{display:block;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--borde);border-radius:8px;font:inherit}
+button.prim,button.sec{border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer;margin-top:14px}
+button.prim{background:var(--coral);color:#fff}
+button.sec{background:#e9e4dc;color:var(--azul)}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--borde);padding:10px 0}
+.item button{margin:0}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.oculto{display:none!important}
+.aviso{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;padding:12px 20px;border-radius:10px}
+.aviso.error{background:var(--coral)}
+.cv{background:#fff;border-top:8px solid var(--coral);padding:28px}
+.cv h1{margin-bottom:2px}.cv h3{color:var(--verde);border-bottom:2px solid var(--arena);padding-bottom:4px}
+@media(max-width:600px){.fila{grid-template-columns:1fr}}
+@media print{.barra,.no-imprimir{display:none}.cv{border:0}}

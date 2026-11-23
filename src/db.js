@@ -1,6 +1,8 @@
 /** Conexión y creación de tablas de CV Builder (SQLite nativo de Node.js) */
 const { DatabaseSync } = require('node:sqlite');
-const db = new DatabaseSync(process.env.DB || 'cvbuilder.db');
+// En Vercel (ambiente de demostración) solo se puede escribir en /tmp; en local se usa cvbuilder.db
+const RUTA = process.env.DB || (process.env.VERCEL ? '/tmp/cvbuilder.db' : 'cvbuilder.db');
+const db = new DatabaseSync(RUTA);
 db.exec('PRAGMA foreign_keys = ON');
 db.exec(`
 CREATE TABLE IF NOT EXISTS usuarios (

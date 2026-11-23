@@ -1,0 +1,5 @@
+{ "name": "cvbuilder-web", "version": "2.0.0", "description": "CV Builder: aplicación web integrada (front-end + API + base de datos) - GA8-220501096-AA1",
+  "main": "src/server.js",
+  "scripts": { "start": "node src/server.js", "test": "node --test" },
+  "author": "Iván Gerardo Rodríguez Bustamante", "license": "MIT",
+  "dependencies": { "bcryptjs": "^3.0.0", "express": "^5.1.0", "jsonwebtoken": "^9.0.2", "swagger-ui-express": "^5.0.1" } }

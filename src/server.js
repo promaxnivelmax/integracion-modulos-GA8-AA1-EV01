@@ -15,7 +15,12 @@ const openapi = require('../docs/openapi.json');
 const app = express();
 app.use(express.json());
 app.use(express.static(require('path').join(__dirname, '..', 'public'))); // módulo de presentación
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openapi, { customSiteTitle: 'CV Builder API' }));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openapi, {
+  customSiteTitle: 'CV Builder API',
+  // En Vercel los archivos de swagger-ui se cargan desde la CDN
+  customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui.min.css',
+  customJs: ['https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-bundle.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-standalone-preset.min.js']
+}));
 app.get('/api/salud', (req, res) => res.json({ ok: true, servicio: 'cvbuilder-api', version: '1.0.0' }));
 app.use('/api/auth', auth);
 
